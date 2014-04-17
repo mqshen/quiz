@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+GET     /wchat/verify                controllers.WchatController.verify(signature: String, timestamp: String, nonce: String, echostr: String)
+GET     /wchat/auth                 controllers.WchatController.getUsery(code: Option[String], state: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
